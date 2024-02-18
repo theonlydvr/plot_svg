@@ -25,6 +25,6 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/tne-lab/py-behav-box-v2"
-"Bug Tracker" = "https://github.com/tne-lab/py-behav-box-v2/issues"
-"Documentation" = "https://py-behav-box-v2.readthedocs.io/en/latest/"
+"Homepage" = "https://github.com/theonlydvr/svg_plot"
+"Bug Tracker" = "https://github.com/theonlydvr/svg_plot/issues"
+# "Documentation" = "https://py-behav-box-v2.readthedocs.io/en/latest/"
