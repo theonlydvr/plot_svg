@@ -1,0 +1,30 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name="plot_svg"
+version="1.0"
+authors=[
+    { name="Evan Dastin-van Rijn", email="dasti006@umn.edu"}
+]
+description="Import SVG into matplotlib"
+
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "matplotlib",
+    "svgelements"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/tne-lab/py-behav-box-v2"
+"Bug Tracker" = "https://github.com/tne-lab/py-behav-box-v2/issues"
+"Documentation" = "https://py-behav-box-v2.readthedocs.io/en/latest/"
