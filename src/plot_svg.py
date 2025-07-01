@@ -62,6 +62,8 @@ def plot_func(obj: svgelements.SVGElement, ignore_ids: List[str]) -> List[mpatch
         return [plot_polygon(obj)]
     elif isinstance(obj, svgelements.Polyline):
         return [plot_polygon(obj, closed=False)]
+    elif isinstance(obj, svgelements.SimpleLine):
+        return [plot_line(obj)]
     elif isinstance(obj, svgelements.Rect):
         return [plot_rect(obj)]
     else:
@@ -138,6 +140,25 @@ def plot_path(path: svgelements.Path) -> mpatches.PathPatch:
                 codes.extend([mpath.Path.CURVE4] * 3)
 
     pp = mpatches.PathPatch(mpath.Path(vertices, codes), **get_attributes(path))
+    return pp
+
+
+def plot_line(line: svgelements.SimpleLine) -> mpatches.PathPatch:
+    """ Generates a PathPatch for the provided SVG Line
+
+        Parameters
+        ----------
+        line : svgelements.SimpleLine
+            the SVG Line to plot
+
+        Returns
+        -------
+        mpatches.PathPatch
+            the SVG Line represented as a matplotlib PathPatch
+        """
+    vertices = [(line.x1, line.y1), (line.x2, line.y2)]
+    codes = [mpath.Path.MOVETO, mpath.Path.LINETO]
+    pp = mpatches.PathPatch(mpath.Path(vertices, codes), **get_attributes(line))
     return pp
 
 
